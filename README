@@ -1,0 +1,48 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4665
+
+ctrlp-ssh
+============
+
+SYNOPSIS
+----------
+You can do SSH to a server via ctrlp.vim interface using this plugin.
+Note that this plugin is a ctrlp.vim extension and it requires a runner (only *tmux* is currently supported).
+
+screenshot: http://i.imgur.com/PvIvax0.png
+
+
+PREMISE
+----------
+First, I believe you're a user of a great Vim plugin ctrlp.vim.
+Otherwise, you need to install it before start installing this plugin.
+Second, this plugin requires tmux to open a new SSH window (currently).
+
+
+CONFIGURATION
+----------
+You need to make this plugin available as a ctrlp.vim extension. Please add *ssh* to a variable `g:ctrlp_extensions`.
+
+    let g:ctrlp_extensions = [ 'ssh' ]
+
+Or if you already use other ctrlp.vim extensions you need to do like this:
+
+    let g:ctrlp_extensions = [ 'funky', 'ssh' ]
+
+Then restart Vim and you can use `:CtrlPSSH` command.
+
+It might be useful mapping like:
+
+    nnoremap <Leader>fs :CtrlPSSH<Cr>
+
+
+LINK
+--------------
+
+* kien/ctrlp.vim: https://github.com/kien/ctrlp.vim
+* tacahiroy/ctrlp-ssh: https://github.com/tacahiroy/ctrlp-ssh
+
+LICENSE
+-------
+
+Copyright (c) 2013 Takahiro Yoshihara. Distributed under the Modified BSD License.
+
