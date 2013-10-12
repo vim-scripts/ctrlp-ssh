@@ -36,8 +36,9 @@ endfunction
 function! s:tmux.go(cmd, opts) dict
   if self.is_running()
     let res = ctrlp#ssh#utils#system(printf('tmux %s %s "%s"', a:opts.open, join(a:opts.args, ' '), a:cmd))
-    if res.err
-      echomsg res.out
+    if res.err | echomsg res.out | return | endif
+    if ctrlp#ssh#is_keep_ctrlp_window()
+      call self.last_window()
     endif
   else
     echomsg 'ERR: tmux is not running'
@@ -45,8 +46,12 @@ function! s:tmux.go(cmd, opts) dict
   endif
 endfunction
 
+function! s:tmux.last_window()
+  call ctrlp#ssh#utils#system('tmux last')
+endfunction
+
 " Return the instance
 "
 function! ctrlp#ssh#runner#tmux#new()
-  return s:tmux
+  return deepcopy(s:tmux)
 endfunction
