@@ -20,17 +20,7 @@ Second, this plugin requires tmux to open a new SSH window (currently).
 
 CONFIGURATION
 ----------
-You need to make this plugin available as a ctrlp.vim extension. Please add *ssh* to a variable `g:ctrlp_extensions`.
-
-    let g:ctrlp_extensions = [ 'ssh' ]
-
-Or if you already use other ctrlp.vim extensions you need to do like this:
-
-    let g:ctrlp_extensions = [ 'funky', 'ssh' ]
-
-Then restart Vim and you can use `:CtrlPSSH` command.
-
-It might be useful mapping like:
+It's useful to define a mapping like this:
 
     nnoremap <Leader>fs :CtrlPSSH<Cr>
 
@@ -38,11 +28,11 @@ It might be useful mapping like:
 LINK
 --------------
 
-* kien/ctrlp.vim: https://github.com/kien/ctrlp.vim
+* ctrlpvim/ctrlp.vim: https://github.com/ctrlpvim/ctrlp.vim
 * tacahiroy/ctrlp-ssh: https://github.com/tacahiroy/ctrlp-ssh
 
 LICENSE
 -------
 
-Copyright (c) 2013 Takahiro Yoshihara. Distributed under the Modified BSD License.
+Copyright (c) 2013-2015 Takahiro Yoshihara. Distributed under the Modified BSD License.
 

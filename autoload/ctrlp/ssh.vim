@@ -34,6 +34,7 @@ let s:ext_vars = {
   \ 'lname':  'ssh',
   \ 'sname':  'ssh',
   \ 'type':   'path',
+  \ 'nolim':  1,
   \ 'sort':   1
   \ }
 
@@ -60,7 +61,7 @@ function! s:parseline(line)
 endfunction
 
 function! s:is_autoload(autoload)
-  let path = substitute(a:autoload, '#', '/', 'g') . '.vim'
+  let path = 'autoload/' . substitute(a:autoload, '#', '/', 'g') . '.vim'
   return !empty(globpath(&runtimepath, path))
 endfunction
 
